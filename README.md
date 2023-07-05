@@ -21,13 +21,13 @@ pip install snscrape requests
 
 1. Clone this repository.
 \```bash
-git clone https://github.com/your_username_/Project.git
+git clone https://github.com/AmaroTruong/JJKTwitterWebScraper.git
 \```
 2. Navigate to the directory.
 \```bash
 cd Project
 \```
-3. Open the script file (`script.py`) in your preferred text editor.
+3. Open the script file (`WebScraper.py`) in your preferred text editor.
 4. Update `YOURAPIKEY` with your textbelt API key and `RECIPIENT` with the recipient's phone number:
 \```python
 JJKUPDATE = requests.post('https://textbelt.com/text', {'phone': 'RECIPIENT','message': eachTweet,'key': 'YOURAPIKEY',})
@@ -52,7 +52,20 @@ This script has three primary functions:
 - The main body of the script scrapes a given Twitter user's tweets, filters them based on a keyword, removes URLs, checks the tweet times, and sends a subset of the tweets as a text message.
 
 ## Screenshots
-<img width="458" alt="Screenshot 2023-07-05 at 12 45 29 AM" src="https://github.com/AmaroTruong/JJKTwitterWebScraper/assets/137460611/37ec6321-2b1e-4ec9-a6bd-abbb7fbebd34">
+<img width="681" alt="Screenshot 2023-07-05 at 12 48 19 AM" src="https://github.com/AmaroTruong/JJKTwitterWebScraper/assets/137460611/e02be8ff-2423-4744-abaa-8080633e4bf7">
+
+## How it works
+
+Tweets from the Twitter account, "@DbsContents" are scraped to keep track of the most recent updates about "JJK" (Jujutsu Kaisen).
+
+With the use of the snscrape library and its API endpoints, the tweets are compiled into a list. This involves several string manipulations and iterations over the tweets.
+
+Specifically focusing on the keyword "JJK", these relevant tweets are organized into a JSON request for Textbelt's API, a service that specializes in SMS automation.
+
+Every day @ 7:30 PM, (23:30 UTC) the script would be running on a python everywhere, in cohesion with PyInstaller, to send a message to my personal phone about JJK news/leaks.
+
+
+
 
 
 
