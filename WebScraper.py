@@ -13,11 +13,11 @@ def removeUrls(text):
     urlPattern = re.compile(r'https?://\S+|www\.\S+')
     return urlPattern.sub(r'', text)
 
-for tweetNum, tweet in enumerate(sntwitter.TwitterUserScraper("TheNBACentral").get_items()):
+for tweetNum, tweet in enumerate(sntwitter.TwitterUserScraper("DbsContents").get_items()):
     if tweetNum >= maxTweets:
         break
     else:
-        if approvedContent(tweet, "Report:"):
+        if approvedContent(tweet, “JJK”):
             dateAndContent.append([tweet.date, tweet.content])
         
 approvedTweets = len(dateAndContent)
@@ -46,6 +46,7 @@ recentTweets = approvedContentList[:3]
 
 # insert your own key from textbelt and your recipient phone number 
 for eachTweet in recentTweets:
-    NBAUPDATE = requests.post('https://textbelt.com/text', {'phone': 'RECIPIENT','message': eachTweet,'key': 'YOURAPIKEY',})
-print(NBAUPDATE.json())
+    JJKUPDATE = requests.post('https://textbelt.com/text', {'phone': 'RECIPIENT','message': eachTweet,'key': 'YOURAPIKEY',})
+print(JJKUPDATE.json())
+
 
