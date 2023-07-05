@@ -1,5 +1,4 @@
-# TwitterWebScrapeTool
-# NBA Twitter Scraper
+# JJKTwitterWebScrapeTool
 
 A Python script to scrape NBA-related tweets from a specific Twitter account. It uses snscrape for scraping and Textbelt for sending the scraped data as an SMS.
 
